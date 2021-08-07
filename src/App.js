@@ -1,10 +1,12 @@
 import React from "react";
+import "./App.css";
+import HeaderComponent from './components/layouts/HeaderComponent.js';
 // import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-const App = () => {
-  return (
-    <h1>Hello world</h1>
-  );
-};
+const App = () => (
+  <div>
+    <HeaderComponent/>
+  </div>
+);
 
 export default App;
