@@ -1,6 +1,10 @@
 import React from 'react'
-// import {Link} from 'react-router-dom'
+// import {Link, Route, Switch} from 'react-router-dom'
 import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
+
+const path = window.location.pathname;
+const title = path.split('/')[1];
+const page = { title };
 
 const HeaderComponent = () => {
     return (
@@ -25,11 +29,11 @@ const HeaderComponent = () => {
                     
                 </Nav>
                 <Nav className="font-weight-bold" id="icon-link">
-                    <Nav.Item className="nav-item"><span><i class="fas fa-search"></i></span></Nav.Item>
-                    <Nav.Item className="nav-item"><span><i class="far fa-heart"></i></span></Nav.Item>
-                    <Nav.Item className="nav-item"><span><i class="fas fa-shopping-cart"></i></span></Nav.Item>
+                    <Nav.Item className="nav-item"><span><i className="fas fa-search"></i></span></Nav.Item>
+                    <Nav.Item className="nav-item"><span><i className="far fa-heart"></i></span></Nav.Item>
+                    <Nav.Item className="nav-item"><span><i className="fas fa-shopping-cart"></i></span></Nav.Item>
                     
-                    <Nav.Item className="nav-item"><span><i class="far fa-user"></i></span></Nav.Item>
+                    <Nav.Item className="nav-item"><span><i className="far fa-user"></i></span></Nav.Item>
                 </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -37,11 +41,11 @@ const HeaderComponent = () => {
             <Container className="h-100 text-center d-flex justify-content-center align-items-center align-content-center">
                 <Row>
                     <Col>
-                        <h2 className="brdcrumb-title">Shop List</h2>
+                        <h2 className="brdcrumb-title">{page.title}</h2>
                         <nav className="brdcrumb-content">
                             <a className="brdcrumb_item" href="/">Home</a>
                             <span className="brdcrumb_sep">/</span>
-                            <span className="brdcrumb_item brdcrumb_item_2">Shop List</span>
+                            <span className="brdcrumb_item brdcrumb_item_2">{page.title}</span>
                         </nav>
                     </Col>
                 </Row>

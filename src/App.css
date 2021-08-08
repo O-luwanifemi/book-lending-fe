@@ -53,6 +53,9 @@ margin-top: 150px;
     font-style: italic;
     margin: 0 7px;
 }
+.nav-item i {
+    cursor: pointer;
+}
 /* .mainmenu__nav .meninmenu li a { */
 /* #hero .nav-item {
     align-items: center;
