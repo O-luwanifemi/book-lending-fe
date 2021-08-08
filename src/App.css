@@ -26,6 +26,33 @@ margin-top: 150px;
 }
 }
 
+.brdcrumb-title {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #fff;
+    line-height: 30px;
+}
+.brdcrumb-content {
+    padding: 15px 0;
+}
+.brdcrumb-content .brdcrumb_item {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #fff;
+}
+.brdcrumb-content .brdcrumb_item_2,
+.brdcrumb-content .brdcrumb_item.active, 
+.brdcrumb-content .brdcrumb_item:hover {
+    color: #ce7852;
+}
+.brdcrumb-content .brdcrumb_sep {
+    color: #fff;
+    font-style: italic;
+    margin: 0 7px;
+}
 /* .mainmenu__nav .meninmenu li a { */
 /* #hero .nav-item {
     align-items: center;

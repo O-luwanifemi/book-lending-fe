@@ -1,6 +1,6 @@
 import React from 'react'
 // import {Link} from 'react-router-dom'
-import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
 
 const HeaderComponent = () => {
     return (
@@ -10,7 +10,7 @@ const HeaderComponent = () => {
                 <Navbar.Brand href="/">BLA</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="mx-auto">
+                <Nav className="mx-auto d -none d -sm-block">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/books">Books</Nav.Link>
                     <Nav.Link href="/about">About</Nav.Link>
@@ -24,7 +24,7 @@ const HeaderComponent = () => {
                     </NavDropdown>
                     
                 </Nav>
-                <Nav className="font-weight-bold">
+                <Nav className="font-weight-bold" id="icon-link">
                     <Nav.Item className="nav-item"><span><i class="fas fa-search"></i></span></Nav.Item>
                     <Nav.Item className="nav-item"><span><i class="far fa-heart"></i></span></Nav.Item>
                     <Nav.Item className="nav-item"><span><i class="fas fa-shopping-cart"></i></span></Nav.Item>
@@ -34,6 +34,18 @@ const HeaderComponent = () => {
                 </Navbar.Collapse>
             </Container>
             </Navbar>
+            <Container className="h-100 text-center d-flex justify-content-center align-items-center align-content-center">
+                <Row>
+                    <Col>
+                        <h2 className="brdcrumb-title">Shop List</h2>
+                        <nav className="brdcrumb-content">
+                            <a className="brdcrumb_item" href="/">Home</a>
+                            <span className="brdcrumb_sep">/</span>
+                            <span className="brdcrumb_item brdcrumb_item_2">Shop List</span>
+                        </nav>
+                    </Col>
+                </Row>
+            </Container>
         </Container>
     )
 }
