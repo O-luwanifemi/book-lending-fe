@@ -11,7 +11,7 @@ const HeaderComponent = () => {
         <Container fluid id="hero">
         <Navbar className="navbar-dark navbar-expand-md mx-5 text-white border-bottom">
             <Container fluid>
-                <Navbar.Brand href="/">BLA</Navbar.Brand>
+                <Navbar.Brand href="/">BookLendingApp</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mx-auto d -none d -sm-block">
