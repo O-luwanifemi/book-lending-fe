@@ -20,9 +20,9 @@ const HeaderComponent = () => {
                     <Nav.Link href="/about">About</Nav.Link>
 
                     <NavDropdown title="User" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#">Profile</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Dashboard</NavDropdown.Item>
-                        <NavDropdown.Item href="#">Something</NavDropdown.Item>
+                        <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
+                        <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
+                        <NavDropdown.Item href="/something">Something</NavDropdown.Item>
                         <NavDropdown.Divider />
                         <NavDropdown.Item className="text-danger">Logout</NavDropdown.Item>
                     </NavDropdown>
