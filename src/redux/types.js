@@ -1,0 +1,10 @@
+const types = {
+    GET_SHELF: 'GET_SHELF',
+    ADD_TO_SHELF: 'ADD_TO_SHELF',
+    REMOVE_FROM_SHELF: 'REMOVE_FROM_SHELF',
+
+    GET_HISTORY: 'GET_HISTORY',
+    ADD_TO_HISTORY: 'ADD_TO_HISTORY',
+}
+
+export default types;
