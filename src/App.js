@@ -1,11 +1,12 @@
 import "./App.css";
 import HeaderComponent from './components/layouts/HeaderComponent.js';
-import SignupComponent from "./components/SignupComponent";
+// import SignupComponent from "./components/SignupComponent";
+import BooksComponent from "./components/BooksComponent";
 
 const App = () => (
   <>
     <HeaderComponent/>
-    <SignupComponent/>
+    <BooksComponent/>
   </>
 );
 
@@ -17,6 +18,7 @@ const App = () => (
     // <HistoryComponent/>
     // <ShelfComponent/>
     // <ShelfComponent/>
+    // <SignupComponent/>
     // <UserProfile />
     // <Switch>
     //   <Route exact path="/register" component={SignupComponent} />
