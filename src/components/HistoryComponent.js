@@ -13,12 +13,12 @@ const HistoryComponent = () => {
     
     useEffect(() => {
         const retrievedHistory = historyData.data;
-        if (retrievedHistory.book){
+        if (retrievedHistory){
             setHistory(retrievedHistory)
         }
     }, [historyData]);
     return (
-        <>
+        <div className="text-center">
         <h2>User Book History</h2>
         {
             history.map((list) => (
@@ -32,7 +32,7 @@ const HistoryComponent = () => {
             </fieldset>
             ))
         }
-        </>
+        </div>
     );
 };
 export default HistoryComponent;
