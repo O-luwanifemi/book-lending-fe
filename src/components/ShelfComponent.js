@@ -18,7 +18,7 @@ const ShelfComponent = () => {
         }
     }, [shelfData]);
     return (
-        <>
+        <div className="text-center">
         <h2>User Current Book Shelf</h2>
         {
             shelf.map((list) => (
@@ -32,7 +32,7 @@ const ShelfComponent = () => {
             </fieldset>
             ))
         }
-        </>
+        </div>
     );
 };
                     // Genre: {list.book.category.name} <br/>
