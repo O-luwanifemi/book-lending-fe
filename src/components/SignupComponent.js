@@ -50,6 +50,10 @@ const SignupComponent = () => {
         }
 
         dispatch(signupAsync(signupData));
+
+        // clear form fields
+        setSignupData({})
+        document.getElementById('signup-form').reset();
     };
     
     return (
@@ -57,7 +61,7 @@ const SignupComponent = () => {
         <Row>
             <Col md="6" className="offset-3 my-3">
                 <h1>Sign Up</h1>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} id="signup-form">
                     <Form.Group className="mb-3" controlId="formBasicLastname">
                         <Form.Label>Lastname</Form.Label>
                         <Form.Control type="text" placeholder="Enter Lastname" 
