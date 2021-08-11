@@ -1,10 +1,12 @@
 import types from '../types';
 
 const initialState = {
+  isAuthenticated: false,
   data: {},
   isLoading: false,
   error: {},
 };
+
 export const loginReducer = (state = initialState, action) => {
   const { type, payload } = action;
   switch (type) {
@@ -18,6 +20,7 @@ export const loginReducer = (state = initialState, action) => {
         ...state,
         isLoading: false,
         data: payload,
+        isAuthenticated: true
       };
     case types.LOGIN_FAILURE:
       return {

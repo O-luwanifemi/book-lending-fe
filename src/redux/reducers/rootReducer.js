@@ -5,7 +5,7 @@ import shelfReducer from './shelfReducer'
 import historyReducer from './historyReducer'
 
 export default combineReducers({
-    loginReducer,
+    auth: loginReducer,
     signupReducer,
     shelfReducer,
     historyReducer,

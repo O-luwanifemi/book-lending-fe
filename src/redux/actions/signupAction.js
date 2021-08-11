@@ -23,7 +23,7 @@ export const signupAsync = (data) => async (dispatch) => {
   try {
     dispatch(signupStart());
     const response = await axios.post(`${BASEURL}/register`, data);
-    dispatch(signupSuccess(response.data)); // from backnd API
+    dispatch(signupSuccess(response.data)); // from backend API
     
   } catch (err) {
     dispatch(signupFailure(err.response));
