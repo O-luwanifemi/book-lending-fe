@@ -9,28 +9,124 @@
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-family: 'Poppins', sans-serif;
     background-color: rgb(230, 229, 229);
     color: black;
 }
 
 .page-container {
-    display: flex;
-    padding: 5%;
-    width: 90%
-    
+    display: grid;
+    grid-template-columns: 300px 800px;
+    grid-column-gap: 20px;
+    max-width: 90%;
+    margin: 50px auto;
+}
 
+.product h5 {
+    font-size: medium;
+    font-weight:bolder;
 }
 
 .book-container {
+    display: grid;
+}
+
+.pagination-row {
+    width: 100%;
     display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
-.product {
-    padding-left: 10%;
-    font-size: medium;
+.list-icon {
+display: flex;
+justify-content: space-between;
 }
 
+.fas {
+font-size: 15px;  
+color: rgb(183, 177, 177);
+border: 1px solid rgb(183, 177, 177);
+display: flex;
+justify-content: center;
+width: 30px;
+height: 25px;
+padding: 2px;
+}
 
+.fa-star {
+    float: left;
+}
 
+.b {
+    width: auto;
+    display: flex;
+    height: 20px;
+}
+.book-row {
+    /* display: flex; */
+    margin-top: 20px;
+}
 
+.sort-by {
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.line {
+    background-color: white;
+    border-top: dotted;
+    border-color: grey;
+    border-width: 2px;
+    width: 100%; 
+}
+.line-1 {
+    border: 1px solid black;
+}
+
+li {
+    list-style-type: none;
+    
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+span {
+    float: right;
+}
+
+.checked {
+color: orange;
+}
+
+.book-icon {
+    font-size: 30px;
+}
+
+.wish-icon {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Anton', sans-serif;
+}
+
+@media (min-width: 300px) and (max-width: 1199.98px) { 
+    .page-container {
+        display: block;
+    }
+
+.pagination-row {
+    width: auto;
+    font-size: xx-small;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.ddbtn {
+    width:20%;
+}
+}

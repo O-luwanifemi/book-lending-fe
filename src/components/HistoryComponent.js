@@ -14,6 +14,7 @@ const HistoryComponent = () => {
     useEffect(() => {
         const retrievedHistory = historyData.data;
         if (retrievedHistory.book){
+            
             setHistory(retrievedHistory)
         }
     }, [historyData]);
