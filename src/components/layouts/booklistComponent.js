@@ -87,13 +87,13 @@
             <div className="book-caption">
                 <Card.Body>
                 <Card.Title>Knight Secrets</Card.Title>
-                <div>
-                <span className="far fa-star checked"></span>
-                <span className="far fa-star checked"></span>
-                <span className="far fa-star checked"></span>
-                <span className="far fa-star"></span>
-                <span className="far fa-star"></span>
-                </div>
+                <ul>
+                    <li><i className="far fa-star checked"></i></li>
+                    <li><i className="far fa-star checked"></i></li>
+                    <li><i className="far fa-star checked"></i></li>
+                    <li><i className="far fa-star"></i></li>
+                    <li><i className="far fa-star"></i></li>
+                </ul>
                 <Card.Text>John Smith</Card.Text>
                 <Card.Text>Fiction</Card.Text>
                 <Card.Text>
@@ -102,7 +102,7 @@
                 veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
                 commodo consequat. 
                 </Card.Text>
-                <Card.Text>{books.year}</Card.Text>
+                <Card.Text>2021</Card.Text>
                 <div className='wish-icon'>
                 <Button variant="outline-secondary" className='btn '>BORROW NOW</Button>
                 <a href="http://" target="_blank" rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
