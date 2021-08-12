@@ -6,8 +6,10 @@ import LoginComponent from "./components/LoginComponent";
 import UserProfile from './pages/sidebar/UserProfile'
 import HistoryComponent from "./components/HistoryComponent";
 import ShelfComponent from "./components/ShelfComponent";
+import DashboardComponent from "./components/DashboardComponent";
 
 import { Switch, Route } from "react-router-dom";
+import PrivateRoute from "./common/PrivateRoute";
 
 const App = () => (
   <>
@@ -16,9 +18,10 @@ const App = () => (
         <Switch>
           <Route exact path="/register" component={SignupComponent} />
           <Route exact path="/login" component={LoginComponent} />
-          <Route exact path="/history" component={HistoryComponent} />
-          <Route exact path="/shelf" component={ShelfComponent} />
-          <Route exact path="/profile" component={UserProfile} />
+          <PrivateRoute exact path="/dashboard" component={DashboardComponent} />
+          <PrivateRoute exact path="/history" component={HistoryComponent} />
+          <PrivateRoute exact path="/shelf" component={ShelfComponent} />
+          <PrivateRoute exact path="/profile" component={UserProfile} />
         </Switch>
       </div>
     <FooterComponent/>

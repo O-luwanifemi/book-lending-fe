@@ -1,6 +1,8 @@
 import { config } from '../../config';
 import axios from 'axios';
 import types from '../types';
+import setAuthHeader from '../../utilities/setAuthHeader';
+// import setResponseInfo from '../../utilities/setResponseInfo';
 
 const { BASEURL } = config;
 
@@ -19,11 +21,20 @@ const loginFailure = (err) => ({
 });
 
 export const loginAsync = (data) => async (dispatch) => {
-  // you may validate function here
+  // you may add validate function here
   try {
     dispatch(loginStart());
+
     const response = await axios.post(`${BASEURL}/login`, data);
-    dispatch(loginSuccess(response.data)); // from backend API
+    localStorage.setItem('token', response.data.data.token.split(" ")[1]);
+    
+    setAuthHeader(response.data.data.token);
+    // setResponseInfo({
+    //   stastus: response.data.data.status,
+    //   message: response.data.data.message
+    // });
+
+    dispatch(loginSuccess(response.data));
     
   } catch (err) {
     dispatch(loginFailure(err.response));

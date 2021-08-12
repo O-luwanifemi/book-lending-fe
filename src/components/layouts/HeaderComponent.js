@@ -17,17 +17,18 @@ const HeaderComponent = () => {
                 <Nav className="mx-auto d -none d -sm-block">
                     <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="/books">Books</Nav.Link>
-                    <Nav.Link href="/Profile">Profile</Nav.Link>
                     <Nav.Link href="/login">Login</Nav.Link>
                     <Nav.Link href="/register">Register</Nav.Link>
 
-                    <NavDropdown title="User" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="/profile">Profile</NavDropdown.Item>
-                        <NavDropdown.Item href="/dashboard">Dashboard</NavDropdown.Item>
-                        <NavDropdown.Item href="/shelf">Book Shelf</NavDropdown.Item>
-                        <NavDropdown.Item href="/history">Book History</NavDropdown.Item>
+                    <NavDropdown title="💁🏻‍♂️ User" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="/profile">👤 Profile</NavDropdown.Item>
+                        <NavDropdown.Item href="/dashboard">🧭 Dashboard</NavDropdown.Item>
+                        <NavDropdown.Item href="/shelf">📚 Book Shelf</NavDropdown.Item>
+                        <NavDropdown.Item href="/history">🧐 Book History</NavDropdown.Item>
+                        <NavDropdown.Item href="/favorites">🤍 Favorites</NavDropdown.Item>
+                        <NavDropdown.Item href="/wishlist">🛒 Wishlist</NavDropdown.Item>
                         <NavDropdown.Divider />
-                        <NavDropdown.Item className="text-danger">Logout</NavDropdown.Item>
+                        <NavDropdown.Item className="text-danger">😞 Logout</NavDropdown.Item>
                     </NavDropdown>
                     
                 </Nav>
