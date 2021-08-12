@@ -2,7 +2,7 @@ import { config } from '../../config';
 import axios from 'axios';
 import types from '../types';
 import setAuthHeader from '../../utilities/setAuthHeader';
-import setResponseInfo from '../../utilities/setResponseInfo';
+// import setResponseInfo from '../../utilities/setResponseInfo';
 
 const { BASEURL } = config;
 
@@ -29,10 +29,10 @@ export const loginAsync = (data) => async (dispatch) => {
     localStorage.setItem('token', response.data.data.token.split(" ")[1]);
     
     setAuthHeader(response.data.data.token);
-    setResponseInfo({
-      stastus: response.data.data.status,
-      message: response.data.data.message
-    });
+    // setResponseInfo({
+    //   stastus: response.data.data.status,
+    //   message: response.data.data.message
+    // });
 
     dispatch(loginSuccess(response.data));
     

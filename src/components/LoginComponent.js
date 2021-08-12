@@ -7,7 +7,6 @@ import { useHistory } from 'react-router-dom';
 const LoginComponent = () => {
     const dispatch = useDispatch();
     const history = useHistory();
-    const [error, setError] = useState({});
 
     const [loginCredentials, setLoginCredentials] = useState({
         email: '',
@@ -30,29 +29,9 @@ const LoginComponent = () => {
         setLoginCredentials({ ...loginCredentials, [name]: value })
     }
 
-    const validateEP = () => {
-        if (loginCredentials.password === '') {
-          return {
-            ok: false,
-            cPassword: 'password connot be empty',
-          };
-        }
-        return {
-          ok: true
-        };
-    };
-
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
-
-        // const passwordCheck = validateEP();
-        // if (!passwordCheck.ok) {
-        //     return setError({
-        //     ...error,
-        //     passwordCheck,
-        //     });
-        // }
         
         dispatch(loginAsync(loginCredentials));
     };
