@@ -10,7 +10,7 @@ const LoginComponent = () => {
         password: '',
     })
 
-    const [error, setError] = useState({});
+    // const [error, setError] = useState({});
 
     const handleFormChanges = (event) => {
         event.preventDefault();
