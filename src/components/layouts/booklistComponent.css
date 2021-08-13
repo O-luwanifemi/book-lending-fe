@@ -54,11 +54,6 @@ height: 25px;
 padding: 2px;
 }
 
-.fa-star {
-    border: 1px solid black;
-    
-}
-
 .b {
     width: auto;
     display: flex;
@@ -94,7 +89,7 @@ a:link {
     color: black;
 }
 
-span {
+.product-span {
     float: right;
 }
 
