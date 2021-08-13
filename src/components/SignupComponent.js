@@ -41,6 +41,7 @@ const SignupComponent = () => {
         event.preventDefault();
         event.stopPropagation();
         const passwordMatch = validateCP();
+        
             if (!passwordMatch.isMatch) {
             return setError({
                 ...error,
@@ -48,32 +49,19 @@ const SignupComponent = () => {
             });
         }
 
-        //call signup action
         dispatch(signupAsync(signupData));
+
+        // clear form fields
+        setSignupData({})
+        document.getElementById('signup-form').reset();
     };
-
-            // <Form /*onSubmit={handleLoginSubmit}*/>
-            //     <Form.Group className="mb-3" controlId="formBasicEmail">
-            //         <Form.Label>Email</Form.Label>
-            //         <Form.Control type="email" placeholder="Enter email" 
-            //             name="email" onChange={handleFormChanges} />
-            //     </Form.Group>
-
-            //     <Form.Group className="mb-3" controlId="formBasicPassword">
-            //         <Form.Label>Password</Form.Label>
-            //         <Form.Control type="password" placeholder="Password" 
-            //             name="password" onChange={handleFormChanges} />
-            //     </Form.Group>
-            //     <Button variant="primary" type="submit">
-            //         Submit
-            //     </Button>
-            // </Form>
+    
     return (
         <Container>
         <Row>
             <Col md="6" className="offset-3 my-3">
                 <h1>Sign Up</h1>
-                <Form onSubmit={handleSubmit}>
+                <Form onSubmit={handleSubmit} id="signup-form">
                     <Form.Group className="mb-3" controlId="formBasicLastname">
                         <Form.Label>Lastname</Form.Label>
                         <Form.Control type="text" placeholder="Enter Lastname" 
