@@ -17,7 +17,7 @@ const BookArray = [
         BookName : 'Sleeping Beauty',Description:'Comics', Availability: 'Available', BookImage : 'https://www.pexels.com/photo/little-black-book-surrounded-with-pink-click-pen-red-lipstick-and-black-wayfarer-eyeglasses-734968/ '
     },
     {
-        BookName : 'Tom and Jerry',Description:'Comics', Availability: 'Available', BookImage : 'https://images.pexels.com/photos/1181599/pexels-photo-1181599.jpeg'
+        BookName : 'Tom and Jerry',Description:'Comics', Availability: 'Available', BookImage : 'https://images.pexels.com/photos/1181599/pexels-photo-1181599.jpeg/'
     }
 ]
 
@@ -27,7 +27,7 @@ function Favorite(props) {
     const Favorite= BookArray.map((ba, i)=>{
         return(
             <div>
-                <Container>
+                <Container className= 'favTable'>
   <Row>
     <Col className = 'img_frame'><Image src={ba.BookImage} rounded /></Col>
     <Col>{ba.BookName}</Col>

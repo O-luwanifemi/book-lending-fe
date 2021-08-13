@@ -1,6 +1,11 @@
-.favCard {
+.favtable {
     border:3px solid palegoldenrod;
+    padding:2em;
+    margin:auto;
+    width: 10em;
+    height:10em;
 }
 .img_frame {
     width: 100px;
-    height: 100px;}
+    height: 100px;
+}
