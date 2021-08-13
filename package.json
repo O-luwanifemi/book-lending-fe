@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:7000"
+  "proxy": "https://booklending-app.herokuapp.com"
 }
