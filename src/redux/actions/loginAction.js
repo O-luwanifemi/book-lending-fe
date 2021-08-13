@@ -10,7 +10,7 @@ const loginStart = () => ({
   type: types.LOGIN_START,
 });
 
-const loginSuccess = (data) => ({
+export const loginSuccess = (data) => ({
   type: types.LOGIN_SUCCESS,
   payload: data,
 });
