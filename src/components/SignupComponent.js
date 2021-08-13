@@ -1,7 +1,10 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { signupAsync } from '../redux/actions/signupAction';
+
+import { loginAsync } from '../redux/actions/loginAction';
+import { useHistory } from 'react-router-dom';
 
 const SignupComponent = () => {
     const dispatch = useDispatch();
@@ -13,6 +16,19 @@ const SignupComponent = () => {
         confirmPassword: '',
     })
 
+    // implement login
+    const history = useHistory();
+    const { auth } = useSelector((state) => state); 
+    const [loginCredentials, setLoginCredentials] = useState({
+        email: '',
+        password: '',
+    })
+    useMemo(() => {
+        if (auth.isAuthenticated) {
+            history.push('/dashboard');
+        }
+    }, [auth, history]);
+
     const [error, setError] = useState({});
 
     const handleFormChanges = (event) => {
@@ -22,6 +38,7 @@ const SignupComponent = () => {
             ...signupData,
             [name]: value
         })
+        setLoginCredentials({ ...loginCredentials, [name]: value })
     }
     
     const validateCP = () => {
@@ -36,7 +53,7 @@ const SignupComponent = () => {
         cPassword: 'Password does not match',
         };
     };
-
+    
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
@@ -50,10 +67,12 @@ const SignupComponent = () => {
         }
 
         dispatch(signupAsync(signupData));
+        dispatch(loginAsync(loginCredentials));
 
         // clear form fields
         setSignupData({})
         document.getElementById('signup-form').reset();
+
     };
     
     return (
