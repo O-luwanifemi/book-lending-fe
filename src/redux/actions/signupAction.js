@@ -30,6 +30,7 @@ export const signupAsync = (data) => async (dispatch) => {
     dispatch(signupStart());
     const response = await axios.post(`${BASEURL}/register`, data);
     
+    // implement login
     localStorage.setItem('token', response.data.data.token.split(" ")[1]);
     setAuthHeader(response.data.data.token);
     dispatch(loginSuccess(response.data));
