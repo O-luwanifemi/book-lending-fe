@@ -27,6 +27,6 @@ const FavoriteComponent = () => {
         </div>
     );
 };
-                    // Genre: {list.book.category.name} <br/>
+
 
 export default FavoriteComponent;

@@ -1,8 +1,5 @@
 import React from 'react'
-// import {Component} from 'react'
-// function Favorite extends React.Component
 import { Container } from 'react-bootstrap'
-import { Card } from 'react-bootstrap'
 import { Button } from 'react-bootstrap'
 import { Col } from 'react-bootstrap'
 import { Row } from 'react-bootstrap'
@@ -36,31 +33,7 @@ function Favorite(props) {
   </Row>
   </Container>
 
-                {/* <ul>
-                    <ol>{ba.BookImage}</ol>
-                    <ol>{ba.BookName}</ol>
-                    <ol>{ba.Description}</ol>
-                    <Button variant="primary">Remove from favourites </Button>
-                </ul> */}
-
             </div>
-//             <div className='favCard col' >
-               
-//                <Card  >
-//                <Card.Img variant="top" src={pt.BookImage}/>
-//     <Card.Body>
-//         <Card.Title>Favorites</Card.Title>
-//         <Card.Subtitle className="mb-2 text-muted">{pt.Description}</Card.Subtitle>
-//         <Card.Text>
-//         {pt.productName} <br/>
-//         {pt.Description}
-//         </Card.Text>
-//         <Button variant="primary">Remove from favourites </Button>
-        
-//     </Card.Body>
-// </Card>
-//                {/* {pt.productName}  {pt.Description}  {pt.Availability}  */}
-//             </div>
         )
         
     })
@@ -72,12 +45,7 @@ function Favorite(props) {
        <div className = 'favoriteMenu'>
            
            {Favorite}
-       {/* <Container>
-            <Row md={2} sm={1} lg={4}>
-                {Product}
-            </Row>
-            
-        </Container> */}
+     
        </div>
       
    </div>
