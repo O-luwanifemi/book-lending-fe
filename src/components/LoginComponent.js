@@ -48,7 +48,7 @@ const LoginComponent = () => {
         <Container>
         <Row>
             <Col md="6" className="offset-3 my-3">
-                <h1>Sign Up</h1>
+                <h1>Login</h1>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
