@@ -19,7 +19,7 @@ checkSession();
 const App = () => (
   <>
     <HeaderComponent/>
-    
+      
  
       <div style={{ minHeight: '55vh' }}>
         <Switch>
@@ -28,10 +28,11 @@ const App = () => (
           <PrivateRoute exact path="/dashboard" component={DashboardComponent} />
           <PrivateRoute exact path="/history" component={HistoryComponent} />
           <PrivateRoute exact path="/shelf" component={ShelfComponent} />
-          <PrivateRoute exact path="/favourites" component={FavoriteComponent} />
+          <PrivateRoute exact path="/favorites" component={FavoriteComponent} />
           <PrivateRoute exact path="/profile" component={UserProfile} />
         </Switch>
       </div>
+
     <FooterComponent/>
   </>
 );

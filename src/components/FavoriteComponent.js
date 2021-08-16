@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getFavoriteAsync} from '../redux/actions/FavoriteAction';
 import Favorite from '../pages/sidebar/Favourite'
-import FavoriteReducer from '../redux/reducers/FavoriteReducer';
+
 
 const FavoriteComponent = () => {
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ const FavoriteComponent = () => {
     }, [favoriteData]);
     return (
         <div className="text-center">
-        <h2>Your Favorites</h2>
+        <h2> Favorites Books</h2>
         <Favorite />
 
         </div>
