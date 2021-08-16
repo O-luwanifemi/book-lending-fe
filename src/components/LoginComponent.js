@@ -39,7 +39,7 @@ const LoginComponent = () => {
     return (
         <Container>
         <Row>
-            <Col md="6" className="offset-3 my-3">
+            <Col md={{ span: 6, offset: 3 }} className="my-3">
                 <h1>Login</h1>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
