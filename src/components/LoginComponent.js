@@ -1,46 +1,50 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { loginAsync } from '../redux/actions/loginAction';
-import { useHistory } from 'react-router-dom';
 
 const LoginComponent = () => {
     const dispatch = useDispatch();
-    const history = useHistory();
-
-    const [loginCredentials, setLoginCredentials] = useState({
+    const [loginData, setLoginData] = useState({
         email: '',
         password: '',
     })
-    
-    const { auth } = useSelector((state) => state);
 
-    useMemo(() => {
-        if (auth.isAuthenticated) {
-            history.push('/dashboard');
-        }
-    }, [auth, history]);
+    // const [error, setError] = useState({});
 
     const handleFormChanges = (event) => {
         event.preventDefault();
-        event.stopPropagation();
         const {name, value} = event.target;
-
-        setLoginCredentials({ ...loginCredentials, [name]: value })
+        setLoginData({
+            ...loginData,
+            [name]: value
+        })
     }
+    
+    const validateEP = () => {
+        if (loginData.password === '') {
+            return {
+                isEmpty: false,
+                ePassword: 'Password cannot be empty',
+            };
+        }
+    };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         event.stopPropagation();
         
-        dispatch(loginAsync(loginCredentials));
+        validateEP();
+
+        //call login action
+        dispatch(loginAsync(loginData));
     };
     
     return (
         <Container>
         <Row>
             <Col md="6" className="offset-3 my-3">
-                <h1>Login</h1>
+                <h1>Sign Up</h1>
                 <Form onSubmit={handleSubmit}>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email</Form.Label>
