@@ -17,7 +17,7 @@ const LoginComponent = () => {
 
     useMemo(() => {
         if (auth.isAuthenticated) {
-            history.push('/dashboard');
+            history.push('/');
         }
     }, [auth, history]);
 

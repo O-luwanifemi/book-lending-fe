@@ -1,12 +1,30 @@
-import React from 'react'
-// import {Link, Route, Switch} from 'react-router-dom'
-import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
+import { useState, useMemo } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap';
+import { useHistory } from "react-router-dom";
+
+import { logoutAsync } from "../../redux/actions/loginAction";
 
 const path = window.location.pathname;
 const title = path.split('/')[1];
 const page = { title };
 
 const HeaderComponent = () => {
+    const dispatch = useDispatch();
+    const history = useHistory();
+
+    const { auth } = useSelector((state) => state);
+
+    useMemo(() => {
+      if (!auth.isAuthenticated) {
+        history.push("/");
+      }
+    }, [auth, history]);
+
+    const handleLogout = () => {
+        
+    }
+
     return (
         <Container fluid id="hero">
         <Navbar className="navbar-dark navbar-expand-md mx-5 text-white border-bottom">
@@ -20,21 +38,21 @@ const HeaderComponent = () => {
 
                     {!localStorage.token ? (
                         <>
-                        <Nav.Link href="/login">Login</Nav.Link>
-                        <Nav.Link href="/register">Register</Nav.Link>
+                            <Nav.Link href="/login">Login</Nav.Link>
+                            <Nav.Link href="/register">Register</Nav.Link>
                         </>
                     ) : (
                         <>
-                        <NavDropdown title="💁🏻‍♂️ User" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="/profile">👤 Profile</NavDropdown.Item>
-                            <NavDropdown.Item href="/dashboard">🧭 Dashboard</NavDropdown.Item>
-                            <NavDropdown.Item href="/shelf">📚 Book Shelf</NavDropdown.Item>
-                            <NavDropdown.Item href="/history">🧐 Book History</NavDropdown.Item>
-                            <NavDropdown.Item href="/favorites">🤍 Favorites</NavDropdown.Item>
-                            <NavDropdown.Item href="/wishlist">🛒 Wishlist</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item className="text-danger">😞 Logout</NavDropdown.Item>
-                        </NavDropdown>
+                            <NavDropdown title="💁🏻‍♂️ User" id="basic-nav-dropdown">
+                                <NavDropdown.Item href="/profile">👤 Profile</NavDropdown.Item>
+                                <NavDropdown.Item href="/dashboard">🧭 Dashboard</NavDropdown.Item>
+                                <NavDropdown.Item href="/shelf">📚 Book Shelf</NavDropdown.Item>
+                                <NavDropdown.Item href="/history">🧐 Book History</NavDropdown.Item>
+                                <NavDropdown.Item href="/favorites">🤍 Favorites</NavDropdown.Item>
+                                <NavDropdown.Item href="/wishlist">🛒 Wishlist</NavDropdown.Item>
+                                <NavDropdown.Divider />
+                                <NavDropdown.Item className="text-danger" onClick={handleLogout}>😞 Logout</NavDropdown.Item>
+                            </NavDropdown>
                         </>
                     )}
                     
