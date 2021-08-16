@@ -1,6 +1,5 @@
 import React from 'react'
-// import {Link, Route, Switch} from 'react-router-dom'
-import {Container, Navbar, Nav, NavDropdown, Row, Col} from 'react-bootstrap'
+import {Container, Row, Col} from 'react-bootstrap'
 
 const path = window.location.pathname;
 const title = path.split('/')[1];
