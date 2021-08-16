@@ -1,3 +1,4 @@
+import checkSession from './utilities/checkSession';
 import "./App.css";
 import HeaderComponent from './components/layouts/HeaderComponent.js';
 import Favorite from "./pages/sidebar/Favourite";
@@ -12,6 +13,7 @@ import DashboardComponent from "./components/DashboardComponent";
 
 import { Switch, Route } from "react-router-dom";
 import PrivateRoute from "./common/PrivateRoute";
+checkSession();
 
 const App = () => (
   <>
