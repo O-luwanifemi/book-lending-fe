@@ -24,21 +24,6 @@ const FavoriteComponent = () => {
         <h2>Your Favorites</h2>
         <Favorite />
 
-        {/* {
-            Favorite.map((list) => (
-            <fieldset key={list._id}>
-                <legend>{list.book.title}</legend>
-                <p>
-                    Author: {list.book.author} <br/>
-                    <em>{list.book.description}</em> <br/>
-                    Borrow Date: {list.createdAt} <br/>
-                    </p>
-            </fieldset>
-            ))
-        } */}
-         {/* <Col className="col-md-6 my-2">
-                    <Favorite/> */}
-                {/* </Col> */}
         </div>
     );
 };
