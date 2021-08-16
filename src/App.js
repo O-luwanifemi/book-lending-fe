@@ -19,8 +19,6 @@ checkSession();
 const App = () => (
   <>
     <HeaderComponent/>
-      
- 
       <div style={{ minHeight: '55vh' }}>
         <Switch>
           <Route exact path="/register" component={SignupComponent} />

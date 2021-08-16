@@ -21,11 +21,23 @@ const FavoriteComponent = () => {
     }, [favoriteData]);
     return (
         <div className="text-center">
-        <h2> Favorites Books</h2>
+        <h2> Favorited Books</h2>
         <Favorite />
-
         </div>
     );
+    /* to be included inplace of line 25 above <Favorite>
+    {
+        favorite.map((list) => (
+        <fieldset key={list._id}>
+            <legend>{list.book.title}</legend>
+            <p>
+                Author: {list.book.author} <br/>
+                <em>{list.book.description}</em> <br/>
+                Borrow Date: {list.createdAt} <br/>
+                </p>
+        </fieldset>
+        ))
+    }*/
 };
 
 

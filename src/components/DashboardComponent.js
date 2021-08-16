@@ -15,8 +15,6 @@ const DashboardComponent = () => (
                 <Col className="col-md-6 my-2">
                     <HistoryComponent />
                 </Col>
-               
-                
             </Row>
         </Container>
     </>
