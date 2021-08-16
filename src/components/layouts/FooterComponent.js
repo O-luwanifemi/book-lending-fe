@@ -8,6 +8,7 @@ const FooterComponent = () => {
             <Row>
                 <Col>
                     <h3>Footer</h3>
+                    <p>...</p>
                 </Col>
             </Row>
         </Container>
