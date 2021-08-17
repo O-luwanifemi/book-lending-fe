@@ -15,6 +15,8 @@ const FavoriteComponent = () => {
         dispatch(getFavoriteAsync());
     }, [dispatch]);
     
+    console.log(favorite) // You may remove this line when you finally use favorite. It hindered deployment.
+    
     useEffect(() => {
         const retrievedFavorite = favoriteData.data;
         if (retrievedFavorite){
