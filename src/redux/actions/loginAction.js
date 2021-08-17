@@ -20,12 +20,30 @@ const loginFailure = (err) => ({
   payload: err,
 });
 
+// FOR WHEN USER LOGS OUT
+const logoutStart = () => ({
+  type: types.LOGOUT_START,
+});
+
+const logoutSuccess = (data) => ({
+  type: types.LOGOUT_SUCCESS,
+  payload: data,
+});
+
+const logoutFailure = (err) => ({
+  type: types.LOGOUT_FAILURE,
+  payload: err,
+});
+
+
+
 export const loginAsync = (data) => async (dispatch) => {
   // you may add validate function here
   try {
     dispatch(loginStart());
 
     const response = await axios.post(`${BASEURL}/login`, data);
+    
     localStorage.setItem('token', response.data.data.token.split(" ")[1]);
     
     setAuthHeader(response.data.data.token);
@@ -38,5 +56,20 @@ export const loginAsync = (data) => async (dispatch) => {
     
   } catch (err) {
     dispatch(loginFailure(err.response));
+  }
+};
+
+export const logoutAsync = () => async (dispatch) => {
+  try {
+    dispatch(logoutStart());
+    
+    const response = await axios.get(`${BASEURL}/logout`);
+    localStorage.removeItem("token");
+
+    setAuthHeader("");
+
+    return dispatch(logoutSuccess(response.data));
+  } catch (err) {
+    dispatch(logoutFailure(err.response));
   }
 };

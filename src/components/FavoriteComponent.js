@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+
 import {getFavoriteAsync} from '../redux/actions/FavoriteAction';
-import Favorite from '../pages/sidebar/Favourite'
+import Favorite from '../pages/Favourites/Favourite';
+import HeaderComponent from "./layouts/HeaderComponent";
 
 
 const FavoriteComponent = () => {
@@ -13,17 +15,23 @@ const FavoriteComponent = () => {
         dispatch(getFavoriteAsync());
     }, [dispatch]);
     
+    console.log(favorite) // You may remove this line when you finally use favorite. It hindered deployment.
+    
     useEffect(() => {
         const retrievedFavorite = favoriteData.data;
         if (retrievedFavorite){
             setFavorite(retrievedFavorite.book)
         }
     }, [favoriteData]);
+
     return (
+      <>
+        <HeaderComponent title="Favourited Books" />
+        
         <div className="text-center">
-        <h2> Favorited Books</h2>
-        <Favorite />
+          <Favorite />
         </div>
+      </>
     );
     /* to be included inplace of line 25 above <Favorite>
     {

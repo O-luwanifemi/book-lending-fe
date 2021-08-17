@@ -1,5 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
+
+import HeaderComponent from "./layouts/HeaderComponent";
 import {getShelfAsync} from '../redux/actions/getShelfAction';
 
 const ShelfComponent = () => {
@@ -17,22 +19,26 @@ const ShelfComponent = () => {
             setShelf(retrievedShelf.book)
         }
     }, [shelfData]);
+
     return (
-        <div className="text-center">
-        <h2>User Current Book Shelf</h2>
-        {
-            shelf.map((list) => (
-            <fieldset key={list._id}>
-                <legend>{list.book.title}</legend>
-                <p>
-                    Author: {list.book.author} <br/>
-                    <em>{list.book.description}</em> <br/>
-                    Borrow Date: {list.createdAt} <br/>
-                    </p>
-            </fieldset>
-            ))
-        }
-        </div>
+        <>
+            <HeaderComponent title="Books in shelf"/>
+
+            <div className="text-center">
+                {
+                    shelf.map((list) => (
+                    <fieldset key={list._id}>
+                        <legend>{list.book.title}</legend>
+                        <p>
+                            Author: {list.book.author} <br/>
+                            <em>{list.book.description}</em> <br/>
+                            Borrow Date: {list.createdAt} <br/>
+                            </p>
+                    </fieldset>
+                    ))
+                }
+            </div>
+        </>
     );
 };
                     // Genre: {list.book.category.name} <br/>
