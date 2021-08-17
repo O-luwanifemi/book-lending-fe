@@ -30,7 +30,8 @@ const App = () => (
         <PrivateRoute exact path="/favorites" component={FavoriteComponent} />
         <PrivateRoute exact path="/profile" component={UserProfile} />
         <PrivateRoute exact path="/wishlist" component={WishList} />
-        <PrivateRoute exact path="/books" component={Books} />
+        <Route exact path="/books" component={Books} />
+        <Route exact path="/" component={Books} />
       </Switch>
     </main>
 
