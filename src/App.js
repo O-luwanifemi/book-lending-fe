@@ -9,8 +9,8 @@ import FooterComponent from './components/layouts/FooterComponent.js';
 import SignupComponent from "./components/SignupComponent";
 import LoginComponent from "./components/LoginComponent";
 import UserProfile from './pages/UserProfile/UserProfile';
-import HistoryComponent from "./components/HistoryComponent";
-import ShelfComponent from "./components/ShelfComponent";
+import HistoryListComponent from "./components/layouts/HistoryListComponent";
+import ShelfListComponent from "./components/layouts/ShelfListComponent";
 import DashboardComponent from "./components/DashboardComponent";
 import FavoriteComponent from './components/FavoriteComponent'; 
 import WishList from './pages/WishList/WishList';
@@ -25,8 +25,8 @@ const App = () => (
         <Route exact path="/register" component={SignupComponent} />
         <Route exact path="/login" component={LoginComponent} />
         <PrivateRoute exact path="/dashboard" component={DashboardComponent} />
-        <PrivateRoute exact path="/history" component={HistoryComponent} />
-        <PrivateRoute exact path="/shelf" component={ShelfComponent} />
+        <PrivateRoute exact path="/history" component={HistoryListComponent} />
+        <PrivateRoute exact path="/shelf" component={ShelfListComponent} />
         <PrivateRoute exact path="/favorites" component={FavoriteComponent} />
         <PrivateRoute exact path="/profile" component={UserProfile} />
         <PrivateRoute exact path="/wishlist" component={WishList} />
