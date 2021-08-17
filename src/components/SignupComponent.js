@@ -81,7 +81,7 @@ const SignupComponent = () => {
 
       <Container>
         <Row>
-          <Col md={{ span: 6, offset: 3 }} className="my-3">
+          <Col md={{ span: 4, offset: 4 }} className="my-3">
             <Form onSubmit={handleSubmit} id="signup-form">
               <Form.Group className="mb-3" controlId="formBasicLastname">
                 <Form.Label>Lastname</Form.Label>
