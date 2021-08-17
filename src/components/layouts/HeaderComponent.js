@@ -1,18 +1,23 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
+import { logoutAsync } from "../../redux/actions/loginAction";
 
-const path = window.location.pathname;
-const title = path.split("/")[1];
-const page = { title };
+const HeaderComponent = ({ title }) => {
+  const dispatch = useDispatch();
 
-const HeaderComponent = () => {
+  const handleLogout = () => {
+    dispatch(logoutAsync());
+  };
+
   return (
-    <Container id="hero">
+    <Container id="hero" style={{ minWidth: "100%" }}>
       <nav className="navbar navbar-dark navbar-expand-md mx-5">
         <div className="container-fluid">
-          <a className="navbar-brand" href="/">
+          <Link to="/books" className="navbar-brand">
             BLA
-          </a>
+          </Link>
+
           <button
             data-bs-toggle="collapse"
             className="navbar-toggler"
@@ -25,27 +30,22 @@ const HeaderComponent = () => {
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <a className="nav-link active" href="/">
+                <Link to="/books" className="nav-link">
                   Home
-                </a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="/books">
-                  Books
-                </a>
+                </Link>
               </li>
 
               {!localStorage.token ? (
                 <>
                   <li className="nav-item">
-                    <a className="nav-link active" href="/login">
+                    <Link to="/login" className="nav-link">
                       Login
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/register">
+                    <Link to="/register" className="nav-link">
                       Register
-                    </a>
+                    </Link>
                   </li>
                 </>
               ) : (
@@ -65,39 +65,39 @@ const HeaderComponent = () => {
                       aria-labelledby="navbarDropdown"
                     >
                       <li>
-                        <a className="dropdown-item" href="/profile">
+                        <Link to="/profile" className="dropdown-item">
                           👤 Profile
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/dashboard">
+                        <Link to="/dashboard" className="dropdown-item">
                           🧭 Dashboard
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/shelf">
+                        <Link to="/shelf" className="dropdown-item">
                           📚 Book Shelf
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/history">
+                        <Link to="/history" className="dropdown-item">
                           🧐 Book History
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/favorites">
+                        <Link to="/favorites" className="dropdown-item">
                           🤍 Favorites
-                        </a>
+                        </Link>
                       </li>
                       <li>
-                        <a className="dropdown-item" href="/wishlist">
+                        <Link to="/wishlist" className="dropdown-item">
                           🛒 Wishlist
-                        </a>
+                        </Link>
                       </li>
                       <li>
                         <hr className="dropdown-divider" />
                       </li>
-                      <li>
+                      <li onClick={handleLogout}>
                         <span className="dropdown-item text-danger">
                           😞 Logout
                         </span>
@@ -149,19 +149,11 @@ const HeaderComponent = () => {
           </div>
         </div>
       </nav>
+
       <Container className="h-100 text-center d-flex justify-content-center align-items-center align-content-center">
         <Row>
           <Col>
-            <h2 className="brdcrumb-title">{page.title}</h2>
-            <nav className="brdcrumb-content">
-              <a className="brdcrumb_item" href="/">
-                Home
-              </a>
-              <span className="brdcrumb_sep">/</span>
-              <span className="brdcrumb_item brdcrumb_item_2">
-                {page.title}
-              </span>
-            </nav>
+            <h2 className="brdcrumb-title">{title}</h2>
           </Col>
         </Row>
       </Container>

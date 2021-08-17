@@ -1,74 +1,91 @@
-import { useState } from 'react';
-import { Container, Form, Button, Row, Col } from 'react-bootstrap';
-import { useDispatch } from 'react-redux';
-import { loginAsync } from '../redux/actions/loginAction';
+import { useState, useMemo } from "react";
+import { Container, Form, Button, Row, Col } from "react-bootstrap";
+import { useDispatch, useSelector } from "react-redux";
+
+import { useHistory } from "react-router-dom";
+import HeaderComponent from "./layouts/HeaderComponent";
+import { loginAsync } from "../redux/actions/loginAction";
 
 const LoginComponent = () => {
-    const dispatch = useDispatch();
-    const [loginData, setLoginData] = useState({
-        email: '',
-        password: '',
-    })
+  const dispatch = useDispatch();
+  const history = useHistory();
 
-    // useMemo(() => {
-    //     if (auth.isAuthenticated) {
-    //         history.push('/');
-    //     }
-    // }, [auth, history]);
+  const [loginCredentials, setLoginCredentials] = useState({
+    email: "",
+    password: "",
+  });
 
-    const handleFormChanges = (event) => {
-        event.preventDefault();
-        const {name, value} = event.target;
-        setLoginData({
-            ...loginData,
-            [name]: value
-        })
+  const { auth } = useSelector((state) => state);
+
+  useMemo(() => {
+    if (auth.isAuthenticated) {
+      history.push("/books");
     }
-    
-    const validateEP = () => {
-        if (loginData.password === '') {
-            return {
-                isEmpty: false,
-                ePassword: 'Password cannot be empty',
-            };
-        }
-    };
+  }, [auth, history]);
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        
-        validateEP();
+  const handleFormChanges = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const { name, value } = event.target;
 
-        //call login action
-        dispatch(loginAsync(loginData));
-    };
-    
-    return (
-        <Container>
-        <Row>
-            <Col md="6" className="offset-3 my-3">
-                <h1>Login</h1>
-                <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" 
-                            name="email" onChange={handleFormChanges} />
-                    </Form.Group>
+    setLoginCredentials({ ...loginCredentials, [name]: value });
+  };
 
-                    <Form.Group className="mb-3" controlId="formBasiePassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" 
-                            name="password" onChange={handleFormChanges} />
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
-                </Form> 
-            </Col>
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    dispatch(loginAsync(loginCredentials));
+  };
+
+  return (
+    <>
+      <HeaderComponent title="Login" />
+
+      <Container
+        style={{
+          width: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minHeight: "calc(100vh - 335px)",
+        }}
+      >
+        <Row
+          style={{
+            width: "100%"
+          }}
+        >
+          <Col md="6" className="offset-3 my-3">
+            <Form onSubmit={handleSubmit}>
+              <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  name="email"
+                  onChange={handleFormChanges}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="formBasiePassword">
+                <Form.Label>Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                  onChange={handleFormChanges}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit">
+                Submit
+              </Button>
+            </Form>
+          </Col>
         </Row>
-        </Container>
-    );
+      </Container>
+    </>
+  );
 };
 
 export default LoginComponent;

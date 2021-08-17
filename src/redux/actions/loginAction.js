@@ -43,6 +43,7 @@ export const loginAsync = (data) => async (dispatch) => {
     dispatch(loginStart());
 
     const response = await axios.post(`${BASEURL}/login`, data);
+    
     localStorage.setItem('token', response.data.data.token.split(" ")[1]);
     
     setAuthHeader(response.data.data.token);
@@ -61,13 +62,13 @@ export const loginAsync = (data) => async (dispatch) => {
 export const logoutAsync = () => async (dispatch) => {
   try {
     dispatch(logoutStart());
-
+    
     const response = await axios.get(`${BASEURL}/logout`);
     localStorage.removeItem("token");
 
     setAuthHeader("");
 
-    dispatch(logoutSuccess(response.data));
+    return dispatch(logoutSuccess(response.data));
   } catch (err) {
     dispatch(logoutFailure(err.response));
   }

@@ -37,7 +37,7 @@ export const loginReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoading: false,
-        data: {},
+        data: payload,
         isAuthenticated: false,
       };
     case types.LOGOUT_FAILURE:
