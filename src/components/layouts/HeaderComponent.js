@@ -14,7 +14,7 @@ const HeaderComponent = ({ title }) => {
     <Container id="hero" style={{ minWidth: "100%" }}>
       <nav className="navbar navbar-dark navbar-expand-md mx-5">
         <div className="container-fluid">
-          <Link to="/books" className="navbar-brand">
+          <Link to="/" className="navbar-brand">
             BLA
           </Link>
 
@@ -30,7 +30,7 @@ const HeaderComponent = ({ title }) => {
           <div className="collapse navbar-collapse" id="navcol-1">
             <ul className="navbar-nav mx-auto">
               <li className="nav-item">
-                <Link to="/books" className="nav-link">
+                <Link to="/" className="nav-link">
                   Home
                 </Link>
               </li>

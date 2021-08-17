@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-
-import HeaderComponent from "./layouts/HeaderComponent";
 import { getHistoryAsync } from "../redux/actions/getHistoryAction";
 
 const HistoryComponent = () => {
@@ -22,8 +20,6 @@ const HistoryComponent = () => {
 
   return (
     <>
-      <HeaderComponent title="Book Use History" />
-
       <div className="text-center">
         {history.map((list) => (
           <fieldset key={list._id}>

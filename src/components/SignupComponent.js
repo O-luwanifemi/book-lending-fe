@@ -79,21 +79,9 @@ const SignupComponent = () => {
     <>
       <HeaderComponent title="Sign up" />
 
-      <Container
-        style={{
-          width: "100%",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: "100%",
-        }}
-      >
-        <Row
-          style={{
-            width: "100%",
-          }}
-        >
-          <Col md="6" className="offset-3 my-3">
+      <Container>
+        <Row>
+          <Col md={{ span: 6, offset: 3 }} className="my-3">
             <Form onSubmit={handleSubmit} id="signup-form">
               <Form.Group className="mb-3" controlId="formBasicLastname">
                 <Form.Label>Lastname</Form.Label>

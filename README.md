@@ -1,4 +1,4 @@
-# Book Lending App - Stutern 1.0 | Group 5.
+# Book Lending App - Stutern 1.0  |  Group 5
 
 ## Live Demo at:
 [https://booklending-app.netlify.app/](https://booklending-app.netlify.app/).
