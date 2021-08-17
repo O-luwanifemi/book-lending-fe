@@ -1,85 +1,92 @@
 body {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    width: 100vw !important;
-    max-width: 100vw !important;
-    min-height: 100vh !important;
-    position: relative !important;
-    overflow-x: hidden !important;
-    justify-content: space-between;
-    background-color: #f7f7f7 !important;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-height: 100vh !important;
+  position: relative !important;
+  overflow-x: hidden !important;
+  justify-content: space-between;
+  background-color: #f7f7f7 !important;
 }
 
 #root {
-    min-width: 100% !important;
+  min-width: 100% !important;
 }
 
 #main {
-    padding: 0 !important;
-    background-color: rgb(247, 247, 247);
+  padding: 0 !important;
+  background-color: rgb(247, 247, 247);
 }
 
 #hero {
-    margin: 0;
-    width: 100vw !important;
-    height: 40vh;
-    padding: 0 ;
-    background: url("./assets/img/bg_5.jpeg") center center / cover no-repeat;
+  margin: 0;
+  width: 100vw !important;
+  height: 40vh;
+  padding: 0;
+  background: url("./assets/img/bg_5.jpeg") center center / cover no-repeat;
 }
 
 .nav-item i {
-padding-right: 15px;
-padding-left: 15px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 #hero_intro {
-font-size: 60px;
-margin-top: 150px;
+  font-size: 60px;
+  margin-top: 150px;
 }
 
-@media (max-width: 577px) {
-.nav-item i {
-    margin-top: 20px;
+/* Cover Page Section */
+Card.Img {
+  width: 100%;
+  height: 100%;
 }
+/* End of Cover Page Section */
+
+@media (max-width: 577px) {
+  .nav-item i {
+    margin-top: 20px;
+  }
 }
 
 @media (max-width: 576px) {
-#hero_intro {
+  #hero_intro {
     font-size: 40px;
-}
+  }
 }
 
 .brdcrumb-title {
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #fff;
-    line-height: 30px;
+  font-size: 24px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 30px;
 }
 .brdcrumb-content {
-    padding: 15px 0;
+  padding: 15px 0;
 }
 .brdcrumb-content .brdcrumb_item {
-    font-size: 14px;
-    font-style: italic;
-    font-weight: 400;
-    text-transform: capitalize;
-    color: #fff;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: #fff;
 }
 .brdcrumb-content .brdcrumb_item_2,
-.brdcrumb-content .brdcrumb_item.active, 
+.brdcrumb-content .brdcrumb_item.active,
 .brdcrumb-content .brdcrumb_item:hover {
-    color: #ce7852;
+  color: #ce7852;
 }
 .brdcrumb-content .brdcrumb_sep {
-    color: #fff;
-    font-style: italic;
-    margin: 0 7px;
+  color: #fff;
+  font-style: italic;
+  margin: 0 7px;
 }
 .nav-item i,
 .dropdown-item {
-    cursor: pointer;
+  cursor: pointer;
 }
 /* .mainmenu__nav .meninmenu li a { */
 /* #hero .nav-item {
