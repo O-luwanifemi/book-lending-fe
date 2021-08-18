@@ -1,9 +1,11 @@
 import { Card, Button, DropdownButton, Dropdown} from 'react-bootstrap'
 import './layouts/booklistComponent.css'
+import HeaderComponent from './layouts/HeaderComponent';
 
     const BooksComponent = () => {
         return (
     <>
+    <HeaderComponent title="Books"/>
     <div className="page-container">
 
         <div className="product">

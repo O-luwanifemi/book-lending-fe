@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import { Form, Button, Row, Col} from 'react-bootstrap';
 import {getBooksAsync} from '../redux/actions/book/getBooksAction';
 import './layouts/booklistComponent.css'
+import HeaderComponent from './layouts/HeaderComponent';
 
 const BookCreationComponent = () => {
     const dispatch = useDispatch();
@@ -54,6 +55,7 @@ const BookCreationComponent = () => {
     };
     return (
     <>
+    <HeaderComponent title="Create A Book"/>
     <div>
         <p>* Indicates required field.</p>
             <Row>
