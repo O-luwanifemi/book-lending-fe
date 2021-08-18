@@ -1,0 +1,146 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(230, 229, 229);
+    color: black;
+}
+
+.page-container {
+    display: grid;
+    grid-template-columns: 300px 800px;
+    grid-column-gap: 20px;
+    max-width: 90%;
+    margin: 50px auto;
+}
+
+.product h5 {
+    font-size: medium;
+    font-weight:bolder;
+}
+
+.book-container {
+    display: grid;
+}
+
+.pagination-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.list-icon {
+display: flex;
+justify-content: space-between;
+}
+
+.fas {
+font-size: 15px;  
+color: rgb(183, 177, 177);
+border: 1px solid rgb(183, 177, 177);
+display: flex;
+justify-content: center;
+width: 30px;
+height: 25px;
+padding: 2px;
+}
+
+.b {
+    width: auto;
+    display: flex;
+    height: 20px;
+}
+.book-row {
+    margin-top: 20px;
+}
+
+.sort-by {
+    margin-top: 2px;
+    margin-right: 10px;
+}
+
+.line {
+    background-color: white;
+    border-top: dotted;
+    border-color: grey;
+    border-width: 2px;
+    width: 100%; 
+}
+.line-1 {
+    border: 1px solid black;
+}
+
+li {
+    list-style-type: none;
+    
+}
+
+a:link {
+    text-decoration: none;
+    color: black;
+}
+
+.product-span {
+    float: right;
+}
+
+.checked {
+color: orange;
+}
+
+.book-icon {
+    font-size: 30px;
+}
+
+li a:active, li a:hover {
+    color: rgba(196, 190, 190, 0.34);
+}
+
+i:active, i:hover {
+    color: black;
+}
+.wish-icon {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Anton', sans-serif;
+}
+
+@media (min-width: 300px) and (max-width: 1199.98px) { 
+    .page-container {
+        display: block;
+    }
+
+    
+    .pagination-row {
+        width: auto;
+        font-size: xx-small;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .ddbtn {
+        width:20%;
+    }
+
+.wish-icon {
+    width: 70%;
+    font-size: xx-small;
+    margin-left: 10px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Anton', sans-serif;
+}
+
+
+}
