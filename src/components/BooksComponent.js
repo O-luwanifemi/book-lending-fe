@@ -1,72 +1,8 @@
-import React, {useState, useEffect} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
 import { Card, Button, DropdownButton, Dropdown} from 'react-bootstrap'
-import {getBooksAsync} from '../redux/actions/book/getBooksAction';
 import './layouts/booklistComponent.css'
 
-const BooksComponent = () => {
-    const dispatch = useDispatch();
-    // const [books, setBooks] = useState([])
-    const [books, setBooks] = useState({
-        title: '', 
-        author: '', 
-        category: '', 
-        description: '', 
-        year: ''
-    });
-
-        const [error, setError] = useState({});
-
-    const handleBookCreation = (event) => {
-        event.preventDefault();
-        const {name, value} = event.target;
-        setBooks({
-            ...books,
-            [name]: value
-        })
-    }
-    
-    const validateCP = () => {
-        if (books.user === books.admin) {
-            return {
-                role: true,
-                creator: 'admin',
-            };
-        }
-        return {
-        role: false,
-        creator: 'notAdmin',
-        };
-    };
-
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        const confirmRole = validateCP();
-        
-            if (!confirmRole.role) {
-            return setError({
-                ...error,
-                confirmRole,
-            });
-        }
-
-        dispatch(getBooksAsync(books));
-    };
-
-    // const booksData = useSelector((state) => state.booksReducer?.data) // Get the data to the reducer.
-    
-    // useEffect(() => {
-    //     dispatch(getBooksAsync());
-    // }, [dispatch]);
-    
-    // useEffect(() => {
-    //     const retrievedBooks = booksData.data;
-    //     if (retrievedBooks){
-    //         setBooks(retrievedBooks)
-    //     }
-    // }, [booksData]);
-    return (
+    const BooksComponent = () => {
+        return (
     <>
     <div className="page-container">
 
@@ -102,7 +38,7 @@ const BooksComponent = () => {
         <li><a href="#">Novel <span className='product-span'>(3)</span></a></li>
         <hr className='line'/>
         {/* eslint-disable-next-line */}
-        <li><a href="#">Others <span>(8)</span></a></li>
+        <li><a href="#">Others <span className='product-span'>(8)</span></a></li>
         <hr className='line'/>
         </ul>
         </div>
@@ -167,7 +103,7 @@ const BooksComponent = () => {
                 <div className='wish-icon'>
                 <Button variant="outline-secondary" className='btn 'href="http://localhost:3000/shelf" rel="noopener noreferrer">BORROW NOW</Button>
                 <a href="http://localhost:3000/favorites"  rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
-                <a href="http:/localhost:3000/wishlist"  rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
+                <a href="http://localhost:3000/wishlist"  rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
                 </div> 
             </Card.Body>
             </div>
@@ -197,9 +133,9 @@ const BooksComponent = () => {
                 </p>
                 <p>2021</p>
                 <div className='wish-icon'>
-                <Button variant="outline-secondary" className='btn '>BORROW NOW</Button>
-                <a href="http://" target="_blank" rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
+                <Button variant="outline-secondary" className='btn 'href="http://localhost:3000/shelf" rel="noopener noreferrer">BORROW NOW</Button>
+                <a href="http://localhost:3000/favorites"  rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
+                <a href="http://localhost:3000/wishlist"  rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
                 </div> 
             </Card.Body>
             </div>
@@ -230,9 +166,9 @@ const BooksComponent = () => {
                 </p>
                 <p>2021</p>
                 <div className='wish-icon'>
-                <Button variant="outline-secondary" className='btn '>BORROW NOW</Button>
-                <a href="http://" target="_blank" rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
-                <a href="http://" target="_blank" rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
+                <Button variant="outline-secondary" className='btn 'href="http://localhost:3000/shelf" rel="noopener noreferrer">BORROW NOW</Button>
+                <a href="http://localhost:3000/favorites"  rel="noopener noreferrer"><span className="far fa-heart book-icon"></span> </a>
+                <a href="http://localhost:3000/wishlist"  rel="noopener noreferrer"><span className="fab fa-opencart book-icon"></span> </a>
                 </div> 
             </Card.Body>
             </div>

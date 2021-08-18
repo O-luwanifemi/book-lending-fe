@@ -101,6 +101,13 @@ color: orange;
     font-size: 30px;
 }
 
+li a:active, li a:hover {
+    color: rgba(196, 190, 190, 0.34);
+}
+
+i:active, i:hover {
+    color: black;
+}
 .wish-icon {
     width: 30%;
     display: flex;
@@ -113,15 +120,27 @@ color: orange;
         display: block;
     }
 
-.pagination-row {
-    width: auto;
+    
+    .pagination-row {
+        width: auto;
+        font-size: xx-small;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+
+    .ddbtn {
+        width:20%;
+    }
+
+.wish-icon {
+    width: 70%;
     font-size: xx-small;
+    margin-left: 10px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    font-family: 'Anton', sans-serif;
 }
 
-.ddbtn {
-    width:20%;
-}
+
 }

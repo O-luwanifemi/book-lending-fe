@@ -1,6 +1,7 @@
 import HistoryComponent from "./HistoryComponent";
 import ShelfComponent from "./ShelfComponent";
 import { Container, Row, Col } from "react-bootstrap";
+import BookCreationComponent from "./BookCreationComponent";
 
 const DashboardComponent = () => (
     <>
@@ -9,6 +10,7 @@ const DashboardComponent = () => (
             <Row>
                 <Col className="col-md-6 my-2">
                     <ShelfComponent />
+                    <BookCreationComponent/>
                 </Col>
                 <Col className="col-md-6 my-2">
                     <HistoryComponent />
