@@ -3,7 +3,6 @@ import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useHistory } from "react-router-dom";
-import HeaderComponent from "./layouts/HeaderComponent";
 import { loginAsync } from "../redux/actions/loginAction";
 import { signupAsync } from "../redux/actions/signupAction";
 
@@ -77,7 +76,6 @@ const SignupComponent = () => {
 
   return (
     <>
-      <HeaderComponent title="Sign up" />
 
       <Container>
         <Row>
