@@ -22,7 +22,7 @@ const BookCreationComponent = () => {
         setBooks({
             ...books,
             [name]: value
-        })git 
+        })
     }
     
     const validateCP = () => {

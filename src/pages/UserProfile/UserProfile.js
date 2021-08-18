@@ -1,10 +1,18 @@
+// import { useDispatch, useSelector } from 'react-redux';
 import { Form } from "react-bootstrap";
+
 import "./UserProfile.css";
+import HeaderComponent from "../../components/layouts/HeaderComponent";
 
 const UserProfile = () => {
+  // const dispatch = useDispatch();
+
+  // const { auth } = useSelector((state) => state);
+  // console.log(auth.data.user)
+
   return (
     <>
-      <header>Header</header>
+      <HeaderComponent title="Profile" />
 
       <section id="details_section">
         <div className="display_img_section">
