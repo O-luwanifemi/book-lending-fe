@@ -3,7 +3,6 @@ import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 
 import { useHistory } from "react-router-dom";
-import HeaderComponent from "./layouts/HeaderComponent";
 import { loginAsync } from "../redux/actions/loginAction";
 
 const LoginComponent = () => {
@@ -40,7 +39,7 @@ const LoginComponent = () => {
 
   return (
     <>
-      <HeaderComponent title="Login" />
+
 
       <Container>
         <Row>
