@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {getShelfAsync} from '../redux/actions/getShelfAction';
+import HeaderComponent from './layouts/HeaderComponent';
 
 const ShelfComponent = () => {
     const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const ShelfComponent = () => {
 
     return (
         <>
+        <HeaderComponent title="Books in shelf"/>
             <div className="text-center">
                 {
                     shelf.map((list) => (

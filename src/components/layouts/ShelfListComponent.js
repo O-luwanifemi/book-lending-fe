@@ -4,7 +4,7 @@ import ShelfComponent from "../ShelfComponent";
 const ShelfListComponent = () => {
   return (
     <>
-    <HeaderComponent title="Books in shelf"/>
+    
     <ShelfComponent/>
     </>
   );
